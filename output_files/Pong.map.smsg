@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Encoder.v(10): always construct contains both blocking and non-blocking assignments File: X:/Studia/sem_m_1/PRUC/PONG_projekt/Encoder.v Line: 10
+Warning (10268): Verilog HDL information at Encoder.v(17): always construct contains both blocking and non-blocking assignments File: X:/Studia/sem_m_1/PRUC/PONG_projekt/Encoder.v Line: 17

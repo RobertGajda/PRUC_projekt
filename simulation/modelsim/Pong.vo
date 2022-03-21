@@ -1,0 +1,1706 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+
+// DATE "03/21/2022 13:56:33"
+
+// 
+// Device: Altera 10M50DAF484C7G Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Encoder (
+	clk,
+	A,
+	B,
+	count);
+input 	clk;
+input 	A;
+input 	B;
+output 	[7:0] count;
+
+// Design Ports Information
+// count[0]	=>  Location: PIN_A14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// count[1]	=>  Location: PIN_B15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// count[2]	=>  Location: PIN_B14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// count[3]	=>  Location: PIN_C14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// count[4]	=>  Location: PIN_D14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// count[5]	=>  Location: PIN_E13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// count[6]	=>  Location: PIN_E12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// count[7]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_M8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// B	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A	=>  Location: PIN_A16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire a_aQUARTUS_CREATED_GND_aI_combout;
+wire a_aQUARTUS_CREATED_UNVM_a_abusy;
+wire a_aQUARTUS_CREATED_ADC1_a_aeoc;
+wire a_aQUARTUS_CREATED_ADC2_a_aeoc;
+wire count_a0_a_aoutput_o;
+wire count_a1_a_aoutput_o;
+wire count_a2_a_aoutput_o;
+wire count_a3_a_aoutput_o;
+wire count_a4_a_aoutput_o;
+wire count_a5_a_aoutput_o;
+wire count_a6_a_aoutput_o;
+wire count_a7_a_aoutput_o;
+wire clk_ainput_o;
+wire clk_ainputclkctrl_outclk;
+wire count_a0_a_a8_combout;
+wire B_ainput_o;
+wire B_delayed_a0_a_a0_combout;
+wire B_delayed_a1_a_afeeder_combout;
+wire B_delayed_a2_a_afeeder_combout;
+wire stableB_a0_combout;
+wire A_ainput_o;
+wire A_delayed_a0_a_a0_combout;
+wire A_delayed_a0_a_afeeder_combout;
+wire A_delayed_a2_a_afeeder_combout;
+wire stableA_a0_combout;
+wire A_sec_delayed_afeeder_combout;
+wire A_sec_delayed_aq;
+wire B_sec_delayed_aq;
+wire count_enable_a0_combout;
+wire count_a0_a_areg0_q;
+wire count_direction_a0_combout;
+wire count_a0_a_a9;
+wire count_a1_a_a10_combout;
+wire count_a1_a_areg0_q;
+wire count_a1_a_a11;
+wire count_a2_a_a12_combout;
+wire count_a2_a_areg0_q;
+wire count_a2_a_a13;
+wire count_a3_a_a14_combout;
+wire count_a3_a_areg0_q;
+wire count_a3_a_a15;
+wire count_a4_a_a16_combout;
+wire count_a4_a_areg0_q;
+wire count_a4_a_a17;
+wire count_a5_a_a18_combout;
+wire count_a5_a_areg0_q;
+wire count_a5_a_a19;
+wire count_a6_a_a20_combout;
+wire count_a6_a_areg0_q;
+wire count_a6_a_a21;
+wire count_a7_a_a22_combout;
+wire count_a7_a_areg0_q;
+wire [3:0] B_delayed;
+wire [3:0] A_delayed;
+
+wire count_a0_a_aoutput_I_driver;
+wire count_a1_a_aoutput_I_driver;
+wire count_a2_a_aoutput_I_driver;
+wire count_a3_a_aoutput_I_driver;
+wire count_a4_a_aoutput_I_driver;
+wire count_a5_a_aoutput_I_driver;
+wire count_a6_a_aoutput_I_driver;
+wire count_a7_a_aoutput_I_driver;
+wire clk_ainput_I_driver;
+wire count_a0_a_a8_DATAB_driver;
+wire B_ainput_I_driver;
+wire B_delayed_a0_a_a0_DATAD_driver;
+wire B_delayed_a0_a_CLK_driver;
+wire B_delayed_a0_a_D_driver;
+wire B_delayed_a1_a_afeeder_DATAC_driver;
+wire B_delayed_a1_a_CLK_driver;
+wire B_delayed_a1_a_D_driver;
+wire B_delayed_a2_a_afeeder_DATAD_driver;
+wire B_delayed_a2_a_CLK_driver;
+wire B_delayed_a2_a_D_driver;
+wire B_delayed_a3_a_CLK_driver;
+wire B_delayed_a3_a_ASDATA_driver;
+wire stableB_a0_DATAA_driver;
+wire stableB_a0_DATAB_driver;
+wire stableB_a0_DATAC_driver;
+wire stableB_a0_DATAD_driver;
+wire A_ainput_I_driver;
+wire A_delayed_a0_a_a0_DATAD_driver;
+wire A_delayed_a0_a_afeeder_DATAD_driver;
+wire A_delayed_a0_a_CLK_driver;
+wire A_delayed_a0_a_D_driver;
+wire A_delayed_a1_a_CLK_driver;
+wire A_delayed_a1_a_ASDATA_driver;
+wire A_delayed_a2_a_afeeder_DATAD_driver;
+wire A_delayed_a2_a_CLK_driver;
+wire A_delayed_a2_a_D_driver;
+wire A_delayed_a3_a_CLK_driver;
+wire A_delayed_a3_a_ASDATA_driver;
+wire stableA_a0_DATAA_driver;
+wire stableA_a0_DATAB_driver;
+wire stableA_a0_DATAC_driver;
+wire stableA_a0_DATAD_driver;
+wire A_sec_delayed_afeeder_DATAD_driver;
+wire A_sec_delayed_CLK_driver;
+wire A_sec_delayed_D_driver;
+wire B_sec_delayed_CLK_driver;
+wire B_sec_delayed_ASDATA_driver;
+wire count_enable_a0_DATAA_driver;
+wire count_enable_a0_DATAB_driver;
+wire count_enable_a0_DATAC_driver;
+wire count_enable_a0_DATAD_driver;
+wire count_a0_a_areg0_CLK_driver;
+wire count_a0_a_areg0_D_driver;
+wire count_a0_a_areg0_ENA_driver;
+wire count_direction_a0_DATAB_driver;
+wire count_direction_a0_DATAD_driver;
+wire count_a1_a_a10_DATAA_driver;
+wire count_a1_a_a10_DATAB_driver;
+wire count_a1_a_a10_CIN_driver;
+wire count_a1_a_areg0_CLK_driver;
+wire count_a1_a_areg0_D_driver;
+wire count_a1_a_areg0_ENA_driver;
+wire count_a2_a_a12_DATAA_driver;
+wire count_a2_a_a12_DATAB_driver;
+wire count_a2_a_a12_CIN_driver;
+wire count_a2_a_areg0_CLK_driver;
+wire count_a2_a_areg0_D_driver;
+wire count_a2_a_areg0_ENA_driver;
+wire count_a3_a_a14_DATAA_driver;
+wire count_a3_a_a14_DATAB_driver;
+wire count_a3_a_a14_CIN_driver;
+wire count_a3_a_areg0_CLK_driver;
+wire count_a3_a_areg0_D_driver;
+wire count_a3_a_areg0_ENA_driver;
+wire count_a4_a_a16_DATAA_driver;
+wire count_a4_a_a16_DATAB_driver;
+wire count_a4_a_a16_CIN_driver;
+wire count_a4_a_areg0_CLK_driver;
+wire count_a4_a_areg0_D_driver;
+wire count_a4_a_areg0_ENA_driver;
+wire count_a5_a_a18_DATAA_driver;
+wire count_a5_a_a18_DATAB_driver;
+wire count_a5_a_a18_CIN_driver;
+wire count_a5_a_areg0_CLK_driver;
+wire count_a5_a_areg0_D_driver;
+wire count_a5_a_areg0_ENA_driver;
+wire count_a6_a_a20_DATAA_driver;
+wire count_a6_a_a20_DATAB_driver;
+wire count_a6_a_a20_CIN_driver;
+wire count_a6_a_areg0_CLK_driver;
+wire count_a6_a_areg0_D_driver;
+wire count_a6_a_areg0_ENA_driver;
+wire count_a7_a_a22_DATAA_driver;
+wire count_a7_a_a22_DATAD_driver;
+wire count_a7_a_a22_CIN_driver;
+wire count_a7_a_areg0_CLK_driver;
+wire count_a7_a_areg0_D_driver;
+wire count_a7_a_areg0_ENA_driver;
+wire a_aQUARTUS_CREATED_UNVM_a_NOSC_ENA_driver;
+wire a_aQUARTUS_CREATED_UNVM_a_XE_YE_driver;
+wire a_aQUARTUS_CREATED_UNVM_a_SE_driver;
+wire a_aQUARTUS_CREATED_ADC1_a_SOC_driver;
+wire a_aQUARTUS_CREATED_ADC1_a_TSEN_driver;
+wire a_aQUARTUS_CREATED_ADC2_a_SOC_driver;
+wire a_aQUARTUS_CREATED_ADC2_a_TSEN_driver;
+wire [4:0] a_aQUARTUS_CREATED_ADC1_a_CHSEL_bus;
+wire [4:0] a_aQUARTUS_CREATED_ADC2_a_CHSEL_bus;
+wire [3:0] clk_ainputclkctrl_INCLK_bus;
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: LCCOMB_X44_Y50_N12
+fiftyfivenm_lcell_comb a_aQUARTUS_CREATED_GND_aI(
+// Equation(s):
+// a_aQUARTUS_CREATED_GND_aI_combout = GND
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(a_aQUARTUS_CREATED_GND_aI_combout),
+	.cout());
+// synopsys translate_off
+defparam a_aQUARTUS_CREATED_GND_aI.lut_mask = 16'h0000;
+defparam a_aQUARTUS_CREATED_GND_aI.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a0_a_aoutput_I_routing_wire_inst (
+	.datain(count_a0_a_areg0_q),
+	.dataout(count_a0_a_aoutput_I_driver));
+
+// Location: IOOBUF_X58_Y54_N30
+fiftyfivenm_io_obuf count_a0_a_aoutput(
+	.i(count_a0_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a0_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a0_a_aoutput.bus_hold = "false";
+defparam count_a0_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a1_a_aoutput_I_routing_wire_inst (
+	.datain(count_a1_a_areg0_q),
+	.dataout(count_a1_a_aoutput_I_driver));
+
+// Location: IOOBUF_X58_Y54_N9
+fiftyfivenm_io_obuf count_a1_a_aoutput(
+	.i(count_a1_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a1_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a1_a_aoutput.bus_hold = "false";
+defparam count_a1_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a2_a_aoutput_I_routing_wire_inst (
+	.datain(count_a2_a_areg0_q),
+	.dataout(count_a2_a_aoutput_I_driver));
+
+// Location: IOOBUF_X56_Y54_N2
+fiftyfivenm_io_obuf count_a2_a_aoutput(
+	.i(count_a2_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a2_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a2_a_aoutput.bus_hold = "false";
+defparam count_a2_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a3_a_aoutput_I_routing_wire_inst (
+	.datain(count_a3_a_areg0_q),
+	.dataout(count_a3_a_aoutput_I_driver));
+
+// Location: IOOBUF_X58_Y54_N16
+fiftyfivenm_io_obuf count_a3_a_aoutput(
+	.i(count_a3_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a3_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a3_a_aoutput.bus_hold = "false";
+defparam count_a3_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a4_a_aoutput_I_routing_wire_inst (
+	.datain(count_a4_a_areg0_q),
+	.dataout(count_a4_a_aoutput_I_driver));
+
+// Location: IOOBUF_X56_Y54_N9
+fiftyfivenm_io_obuf count_a4_a_aoutput(
+	.i(count_a4_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a4_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a4_a_aoutput.bus_hold = "false";
+defparam count_a4_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a5_a_aoutput_I_routing_wire_inst (
+	.datain(count_a5_a_areg0_q),
+	.dataout(count_a5_a_aoutput_I_driver));
+
+// Location: IOOBUF_X56_Y54_N16
+fiftyfivenm_io_obuf count_a5_a_aoutput(
+	.i(count_a5_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a5_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a5_a_aoutput.bus_hold = "false";
+defparam count_a5_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a6_a_aoutput_I_routing_wire_inst (
+	.datain(count_a6_a_areg0_q),
+	.dataout(count_a6_a_aoutput_I_driver));
+
+// Location: IOOBUF_X56_Y54_N23
+fiftyfivenm_io_obuf count_a6_a_aoutput(
+	.i(count_a6_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a6_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a6_a_aoutput.bus_hold = "false";
+defparam count_a6_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a7_a_aoutput_I_routing_wire_inst (
+	.datain(count_a7_a_areg0_q),
+	.dataout(count_a7_a_aoutput_I_driver));
+
+// Location: IOOBUF_X58_Y54_N23
+fiftyfivenm_io_obuf count_a7_a_aoutput(
+	.i(count_a7_a_aoutput_I_driver),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(count_a7_a_aoutput_o),
+	.obar());
+// synopsys translate_off
+defparam count_a7_a_aoutput.bus_hold = "false";
+defparam count_a7_a_aoutput.open_drain_output = "false";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire clk_ainput_I_routing_wire_inst (
+	.datain(clk),
+	.dataout(clk_ainput_I_driver));
+
+// Location: IOIBUF_X0_Y18_N15
+fiftyfivenm_io_ibuf clk_ainput(
+	.i(clk_ainput_I_driver),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(clk_ainput_o));
+// synopsys translate_off
+defparam clk_ainput.bus_hold = "false";
+defparam clk_ainput.listen_to_nsleep_signal = "false";
+defparam clk_ainput.simulate_z_as = "z";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire clk_ainputclkctrl_INCLK_a0_a_routing_wire_inst (
+	.datain(clk_ainput_o),
+	.dataout(clk_ainputclkctrl_INCLK_bus[0]));
+
+fiftyfivenm_routing_wire clk_ainputclkctrl_INCLK_a1_a_routing_wire_inst (
+	.datain(vcc),
+	.dataout(clk_ainputclkctrl_INCLK_bus[1]));
+
+fiftyfivenm_routing_wire clk_ainputclkctrl_INCLK_a2_a_routing_wire_inst (
+	.datain(vcc),
+	.dataout(clk_ainputclkctrl_INCLK_bus[2]));
+
+fiftyfivenm_routing_wire clk_ainputclkctrl_INCLK_a3_a_routing_wire_inst (
+	.datain(vcc),
+	.dataout(clk_ainputclkctrl_INCLK_bus[3]));
+
+// Location: CLKCTRL_G3
+fiftyfivenm_clkctrl clk_ainputclkctrl(
+	.ena(vcc),
+	.inclk(clk_ainputclkctrl_INCLK_bus),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(clk_ainputclkctrl_outclk));
+// synopsys translate_off
+defparam clk_ainputclkctrl.clock_type = "global clock";
+defparam clk_ainputclkctrl.ena_register_mode = "none";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a0_a_a8_DATAB_routing_wire_inst (
+	.datain(count_a0_a_areg0_q),
+	.dataout(count_a0_a_a8_DATAB_driver));
+
+// Location: LCCOMB_X58_Y53_N14
+fiftyfivenm_lcell_comb count_a0_a_a8(
+// Equation(s):
+// count_a0_a_a8_combout = count_a0_a_areg0_q $ (VCC)
+// count_a0_a_a9 = CARRY(count_a0_a_areg0_q)
+
+	.dataa(gnd),
+	.datab(count_a0_a_a8_DATAB_driver),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(count_a0_a_a8_combout),
+	.cout(count_a0_a_a9));
+// synopsys translate_off
+defparam count_a0_a_a8.lut_mask = 16'h33CC;
+defparam count_a0_a_a8.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_ainput_I_routing_wire_inst (
+	.datain(B),
+	.dataout(B_ainput_I_driver));
+
+// Location: IOIBUF_X58_Y54_N1
+fiftyfivenm_io_ibuf B_ainput(
+	.i(B_ainput_I_driver),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(B_ainput_o));
+// synopsys translate_off
+defparam B_ainput.bus_hold = "false";
+defparam B_ainput.listen_to_nsleep_signal = "false";
+defparam B_ainput.simulate_z_as = "z";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_delayed_a0_a_a0_DATAD_routing_wire_inst (
+	.datain(B_ainput_o),
+	.dataout(B_delayed_a0_a_a0_DATAD_driver));
+
+// Location: LCCOMB_X58_Y53_N12
+fiftyfivenm_lcell_comb B_delayed_a0_a_a0(
+// Equation(s):
+// B_delayed_a0_a_a0_combout = !B_ainput_o
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(B_delayed_a0_a_a0_DATAD_driver),
+	.cin(gnd),
+	.combout(B_delayed_a0_a_a0_combout),
+	.cout());
+// synopsys translate_off
+defparam B_delayed_a0_a_a0.lut_mask = 16'h00FF;
+defparam B_delayed_a0_a_a0.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_delayed_a0_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(B_delayed_a0_a_CLK_driver));
+
+fiftyfivenm_routing_wire B_delayed_a0_a_D_routing_wire_inst (
+	.datain(B_delayed_a0_a_a0_combout),
+	.dataout(B_delayed_a0_a_D_driver));
+
+// Location: FF_X58_Y53_N13
+dffeas B_delayed_a0_a(
+	.clk(B_delayed_a0_a_CLK_driver),
+	.d(B_delayed_a0_a_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B_delayed[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam B_delayed_a0_a.is_wysiwyg = "true";
+defparam B_delayed_a0_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_delayed_a1_a_afeeder_DATAC_routing_wire_inst (
+	.datain(B_delayed[0]),
+	.dataout(B_delayed_a1_a_afeeder_DATAC_driver));
+
+// Location: LCCOMB_X58_Y53_N8
+fiftyfivenm_lcell_comb B_delayed_a1_a_afeeder(
+// Equation(s):
+// B_delayed_a1_a_afeeder_combout = B_delayed[0]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(B_delayed_a1_a_afeeder_DATAC_driver),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(B_delayed_a1_a_afeeder_combout),
+	.cout());
+// synopsys translate_off
+defparam B_delayed_a1_a_afeeder.lut_mask = 16'hF0F0;
+defparam B_delayed_a1_a_afeeder.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_delayed_a1_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(B_delayed_a1_a_CLK_driver));
+
+fiftyfivenm_routing_wire B_delayed_a1_a_D_routing_wire_inst (
+	.datain(B_delayed_a1_a_afeeder_combout),
+	.dataout(B_delayed_a1_a_D_driver));
+
+// Location: FF_X58_Y53_N9
+dffeas B_delayed_a1_a(
+	.clk(B_delayed_a1_a_CLK_driver),
+	.d(B_delayed_a1_a_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B_delayed[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam B_delayed_a1_a.is_wysiwyg = "true";
+defparam B_delayed_a1_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_delayed_a2_a_afeeder_DATAD_routing_wire_inst (
+	.datain(B_delayed[1]),
+	.dataout(B_delayed_a2_a_afeeder_DATAD_driver));
+
+// Location: LCCOMB_X58_Y53_N10
+fiftyfivenm_lcell_comb B_delayed_a2_a_afeeder(
+// Equation(s):
+// B_delayed_a2_a_afeeder_combout = B_delayed[1]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(B_delayed_a2_a_afeeder_DATAD_driver),
+	.cin(gnd),
+	.combout(B_delayed_a2_a_afeeder_combout),
+	.cout());
+// synopsys translate_off
+defparam B_delayed_a2_a_afeeder.lut_mask = 16'hFF00;
+defparam B_delayed_a2_a_afeeder.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_delayed_a2_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(B_delayed_a2_a_CLK_driver));
+
+fiftyfivenm_routing_wire B_delayed_a2_a_D_routing_wire_inst (
+	.datain(B_delayed_a2_a_afeeder_combout),
+	.dataout(B_delayed_a2_a_D_driver));
+
+// Location: FF_X58_Y53_N11
+dffeas B_delayed_a2_a(
+	.clk(B_delayed_a2_a_CLK_driver),
+	.d(B_delayed_a2_a_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B_delayed[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam B_delayed_a2_a.is_wysiwyg = "true";
+defparam B_delayed_a2_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_delayed_a3_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(B_delayed_a3_a_CLK_driver));
+
+fiftyfivenm_routing_wire B_delayed_a3_a_ASDATA_routing_wire_inst (
+	.datain(B_delayed[2]),
+	.dataout(B_delayed_a3_a_ASDATA_driver));
+
+// Location: FF_X58_Y53_N1
+dffeas B_delayed_a3_a(
+	.clk(B_delayed_a3_a_CLK_driver),
+	.d(gnd),
+	.asdata(B_delayed_a3_a_ASDATA_driver),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B_delayed[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam B_delayed_a3_a.is_wysiwyg = "true";
+defparam B_delayed_a3_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire stableB_a0_DATAA_routing_wire_inst (
+	.datain(B_delayed[0]),
+	.dataout(stableB_a0_DATAA_driver));
+
+fiftyfivenm_routing_wire stableB_a0_DATAB_routing_wire_inst (
+	.datain(B_delayed[1]),
+	.dataout(stableB_a0_DATAB_driver));
+
+fiftyfivenm_routing_wire stableB_a0_DATAC_routing_wire_inst (
+	.datain(B_delayed[3]),
+	.dataout(stableB_a0_DATAC_driver));
+
+fiftyfivenm_routing_wire stableB_a0_DATAD_routing_wire_inst (
+	.datain(B_delayed[2]),
+	.dataout(stableB_a0_DATAD_driver));
+
+// Location: LCCOMB_X58_Y53_N0
+fiftyfivenm_lcell_comb stableB_a0(
+// Equation(s):
+// stableB_a0_combout = (B_delayed[0] & (B_delayed[1] & (B_delayed[3] & B_delayed[2])))
+
+	.dataa(stableB_a0_DATAA_driver),
+	.datab(stableB_a0_DATAB_driver),
+	.datac(stableB_a0_DATAC_driver),
+	.datad(stableB_a0_DATAD_driver),
+	.cin(gnd),
+	.combout(stableB_a0_combout),
+	.cout());
+// synopsys translate_off
+defparam stableB_a0.lut_mask = 16'h8000;
+defparam stableB_a0.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_ainput_I_routing_wire_inst (
+	.datain(A),
+	.dataout(A_ainput_I_driver));
+
+// Location: IOIBUF_X60_Y54_N15
+fiftyfivenm_io_ibuf A_ainput(
+	.i(A_ainput_I_driver),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(A_ainput_o));
+// synopsys translate_off
+defparam A_ainput.bus_hold = "false";
+defparam A_ainput.listen_to_nsleep_signal = "false";
+defparam A_ainput.simulate_z_as = "z";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_delayed_a0_a_a0_DATAD_routing_wire_inst (
+	.datain(A_ainput_o),
+	.dataout(A_delayed_a0_a_a0_DATAD_driver));
+
+// Location: LCCOMB_X60_Y53_N16
+fiftyfivenm_lcell_comb A_delayed_a0_a_a0(
+// Equation(s):
+// A_delayed_a0_a_a0_combout = !A_ainput_o
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(A_delayed_a0_a_a0_DATAD_driver),
+	.cin(gnd),
+	.combout(A_delayed_a0_a_a0_combout),
+	.cout());
+// synopsys translate_off
+defparam A_delayed_a0_a_a0.lut_mask = 16'h00FF;
+defparam A_delayed_a0_a_a0.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_delayed_a0_a_afeeder_DATAD_routing_wire_inst (
+	.datain(A_delayed_a0_a_a0_combout),
+	.dataout(A_delayed_a0_a_afeeder_DATAD_driver));
+
+// Location: LCCOMB_X59_Y53_N24
+fiftyfivenm_lcell_comb A_delayed_a0_a_afeeder(
+// Equation(s):
+// A_delayed_a0_a_afeeder_combout = A_delayed_a0_a_a0_combout
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(A_delayed_a0_a_afeeder_DATAD_driver),
+	.cin(gnd),
+	.combout(A_delayed_a0_a_afeeder_combout),
+	.cout());
+// synopsys translate_off
+defparam A_delayed_a0_a_afeeder.lut_mask = 16'hFF00;
+defparam A_delayed_a0_a_afeeder.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_delayed_a0_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(A_delayed_a0_a_CLK_driver));
+
+fiftyfivenm_routing_wire A_delayed_a0_a_D_routing_wire_inst (
+	.datain(A_delayed_a0_a_afeeder_combout),
+	.dataout(A_delayed_a0_a_D_driver));
+
+// Location: FF_X59_Y53_N25
+dffeas A_delayed_a0_a(
+	.clk(A_delayed_a0_a_CLK_driver),
+	.d(A_delayed_a0_a_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A_delayed[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam A_delayed_a0_a.is_wysiwyg = "true";
+defparam A_delayed_a0_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_delayed_a1_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(A_delayed_a1_a_CLK_driver));
+
+fiftyfivenm_routing_wire A_delayed_a1_a_ASDATA_routing_wire_inst (
+	.datain(A_delayed[0]),
+	.dataout(A_delayed_a1_a_ASDATA_driver));
+
+// Location: FF_X58_Y53_N31
+dffeas A_delayed_a1_a(
+	.clk(A_delayed_a1_a_CLK_driver),
+	.d(gnd),
+	.asdata(A_delayed_a1_a_ASDATA_driver),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A_delayed[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam A_delayed_a1_a.is_wysiwyg = "true";
+defparam A_delayed_a1_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_delayed_a2_a_afeeder_DATAD_routing_wire_inst (
+	.datain(A_delayed[1]),
+	.dataout(A_delayed_a2_a_afeeder_DATAD_driver));
+
+// Location: LCCOMB_X59_Y53_N30
+fiftyfivenm_lcell_comb A_delayed_a2_a_afeeder(
+// Equation(s):
+// A_delayed_a2_a_afeeder_combout = A_delayed[1]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(A_delayed_a2_a_afeeder_DATAD_driver),
+	.cin(gnd),
+	.combout(A_delayed_a2_a_afeeder_combout),
+	.cout());
+// synopsys translate_off
+defparam A_delayed_a2_a_afeeder.lut_mask = 16'hFF00;
+defparam A_delayed_a2_a_afeeder.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_delayed_a2_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(A_delayed_a2_a_CLK_driver));
+
+fiftyfivenm_routing_wire A_delayed_a2_a_D_routing_wire_inst (
+	.datain(A_delayed_a2_a_afeeder_combout),
+	.dataout(A_delayed_a2_a_D_driver));
+
+// Location: FF_X59_Y53_N31
+dffeas A_delayed_a2_a(
+	.clk(A_delayed_a2_a_CLK_driver),
+	.d(A_delayed_a2_a_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A_delayed[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam A_delayed_a2_a.is_wysiwyg = "true";
+defparam A_delayed_a2_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_delayed_a3_a_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(A_delayed_a3_a_CLK_driver));
+
+fiftyfivenm_routing_wire A_delayed_a3_a_ASDATA_routing_wire_inst (
+	.datain(A_delayed[2]),
+	.dataout(A_delayed_a3_a_ASDATA_driver));
+
+// Location: FF_X58_Y53_N7
+dffeas A_delayed_a3_a(
+	.clk(A_delayed_a3_a_CLK_driver),
+	.d(gnd),
+	.asdata(A_delayed_a3_a_ASDATA_driver),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A_delayed[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam A_delayed_a3_a.is_wysiwyg = "true";
+defparam A_delayed_a3_a.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire stableA_a0_DATAA_routing_wire_inst (
+	.datain(A_delayed[2]),
+	.dataout(stableA_a0_DATAA_driver));
+
+fiftyfivenm_routing_wire stableA_a0_DATAB_routing_wire_inst (
+	.datain(A_delayed[1]),
+	.dataout(stableA_a0_DATAB_driver));
+
+fiftyfivenm_routing_wire stableA_a0_DATAC_routing_wire_inst (
+	.datain(A_delayed[3]),
+	.dataout(stableA_a0_DATAC_driver));
+
+fiftyfivenm_routing_wire stableA_a0_DATAD_routing_wire_inst (
+	.datain(A_delayed[0]),
+	.dataout(stableA_a0_DATAD_driver));
+
+// Location: LCCOMB_X58_Y53_N6
+fiftyfivenm_lcell_comb stableA_a0(
+// Equation(s):
+// stableA_a0_combout = (A_delayed[2] & (A_delayed[1] & (A_delayed[3] & A_delayed[0])))
+
+	.dataa(stableA_a0_DATAA_driver),
+	.datab(stableA_a0_DATAB_driver),
+	.datac(stableA_a0_DATAC_driver),
+	.datad(stableA_a0_DATAD_driver),
+	.cin(gnd),
+	.combout(stableA_a0_combout),
+	.cout());
+// synopsys translate_off
+defparam stableA_a0.lut_mask = 16'h8000;
+defparam stableA_a0.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_sec_delayed_afeeder_DATAD_routing_wire_inst (
+	.datain(stableA_a0_combout),
+	.dataout(A_sec_delayed_afeeder_DATAD_driver));
+
+// Location: LCCOMB_X58_Y53_N4
+fiftyfivenm_lcell_comb A_sec_delayed_afeeder(
+// Equation(s):
+// A_sec_delayed_afeeder_combout = stableA_a0_combout
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(A_sec_delayed_afeeder_DATAD_driver),
+	.cin(gnd),
+	.combout(A_sec_delayed_afeeder_combout),
+	.cout());
+// synopsys translate_off
+defparam A_sec_delayed_afeeder.lut_mask = 16'hFF00;
+defparam A_sec_delayed_afeeder.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire A_sec_delayed_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(A_sec_delayed_CLK_driver));
+
+fiftyfivenm_routing_wire A_sec_delayed_D_routing_wire_inst (
+	.datain(A_sec_delayed_afeeder_combout),
+	.dataout(A_sec_delayed_D_driver));
+
+// Location: FF_X58_Y53_N5
+dffeas A_sec_delayed(
+	.clk(A_sec_delayed_CLK_driver),
+	.d(A_sec_delayed_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A_sec_delayed_aq),
+	.prn(vcc));
+// synopsys translate_off
+defparam A_sec_delayed.is_wysiwyg = "true";
+defparam A_sec_delayed.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire B_sec_delayed_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(B_sec_delayed_CLK_driver));
+
+fiftyfivenm_routing_wire B_sec_delayed_ASDATA_routing_wire_inst (
+	.datain(stableB_a0_combout),
+	.dataout(B_sec_delayed_ASDATA_driver));
+
+// Location: FF_X58_Y53_N3
+dffeas B_sec_delayed(
+	.clk(B_sec_delayed_CLK_driver),
+	.d(gnd),
+	.asdata(B_sec_delayed_ASDATA_driver),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B_sec_delayed_aq),
+	.prn(vcc));
+// synopsys translate_off
+defparam B_sec_delayed.is_wysiwyg = "true";
+defparam B_sec_delayed.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_enable_a0_DATAA_routing_wire_inst (
+	.datain(stableB_a0_combout),
+	.dataout(count_enable_a0_DATAA_driver));
+
+fiftyfivenm_routing_wire count_enable_a0_DATAB_routing_wire_inst (
+	.datain(A_sec_delayed_aq),
+	.dataout(count_enable_a0_DATAB_driver));
+
+fiftyfivenm_routing_wire count_enable_a0_DATAC_routing_wire_inst (
+	.datain(B_sec_delayed_aq),
+	.dataout(count_enable_a0_DATAC_driver));
+
+fiftyfivenm_routing_wire count_enable_a0_DATAD_routing_wire_inst (
+	.datain(stableA_a0_combout),
+	.dataout(count_enable_a0_DATAD_driver));
+
+// Location: LCCOMB_X58_Y53_N2
+fiftyfivenm_lcell_comb count_enable_a0(
+// Equation(s):
+// count_enable_a0_combout = stableB_a0_combout $ (A_sec_delayed_aq $ (B_sec_delayed_aq $ (stableA_a0_combout)))
+
+	.dataa(count_enable_a0_DATAA_driver),
+	.datab(count_enable_a0_DATAB_driver),
+	.datac(count_enable_a0_DATAC_driver),
+	.datad(count_enable_a0_DATAD_driver),
+	.cin(gnd),
+	.combout(count_enable_a0_combout),
+	.cout());
+// synopsys translate_off
+defparam count_enable_a0.lut_mask = 16'h6996;
+defparam count_enable_a0.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a0_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a0_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a0_a_areg0_D_routing_wire_inst (
+	.datain(count_a0_a_a8_combout),
+	.dataout(count_a0_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a0_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a0_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N15
+dffeas count_a0_a_areg0(
+	.clk(count_a0_a_areg0_CLK_driver),
+	.d(count_a0_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a0_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a0_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a0_a_areg0.is_wysiwyg = "true";
+defparam count_a0_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_direction_a0_DATAB_routing_wire_inst (
+	.datain(A_sec_delayed_aq),
+	.dataout(count_direction_a0_DATAB_driver));
+
+fiftyfivenm_routing_wire count_direction_a0_DATAD_routing_wire_inst (
+	.datain(stableB_a0_combout),
+	.dataout(count_direction_a0_DATAD_driver));
+
+// Location: LCCOMB_X58_Y53_N30
+fiftyfivenm_lcell_comb count_direction_a0(
+// Equation(s):
+// count_direction_a0_combout = A_sec_delayed_aq $ (stableB_a0_combout)
+
+	.dataa(gnd),
+	.datab(count_direction_a0_DATAB_driver),
+	.datac(gnd),
+	.datad(count_direction_a0_DATAD_driver),
+	.cin(gnd),
+	.combout(count_direction_a0_combout),
+	.cout());
+// synopsys translate_off
+defparam count_direction_a0.lut_mask = 16'h33CC;
+defparam count_direction_a0.sum_lutc_input = "datac";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a1_a_a10_DATAA_routing_wire_inst (
+	.datain(count_direction_a0_combout),
+	.dataout(count_a1_a_a10_DATAA_driver));
+
+fiftyfivenm_routing_wire count_a1_a_a10_DATAB_routing_wire_inst (
+	.datain(count_a1_a_areg0_q),
+	.dataout(count_a1_a_a10_DATAB_driver));
+
+fiftyfivenm_routing_wire count_a1_a_a10_CIN_routing_wire_inst (
+	.datain(count_a0_a_a9),
+	.dataout(count_a1_a_a10_CIN_driver));
+
+// Location: LCCOMB_X58_Y53_N16
+fiftyfivenm_lcell_comb count_a1_a_a10(
+// Equation(s):
+// count_a1_a_a10_combout = (count_direction_a0_combout & ((count_a1_a_areg0_q & (!count_a0_a_a9)) # (!count_a1_a_areg0_q & ((count_a0_a_a9) # (GND))))) # (!count_direction_a0_combout & ((count_a1_a_areg0_q & (count_a0_a_a9 & VCC)) # (!count_a1_a_areg0_q & 
+// (!count_a0_a_a9))))
+// count_a1_a_a11 = CARRY((count_direction_a0_combout & ((!count_a0_a_a9) # (!count_a1_a_areg0_q))) # (!count_direction_a0_combout & (!count_a1_a_areg0_q & !count_a0_a_a9)))
+
+	.dataa(count_a1_a_a10_DATAA_driver),
+	.datab(count_a1_a_a10_DATAB_driver),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(count_a1_a_a10_CIN_driver),
+	.combout(count_a1_a_a10_combout),
+	.cout(count_a1_a_a11));
+// synopsys translate_off
+defparam count_a1_a_a10.lut_mask = 16'h692B;
+defparam count_a1_a_a10.sum_lutc_input = "cin";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a1_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a1_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a1_a_areg0_D_routing_wire_inst (
+	.datain(count_a1_a_a10_combout),
+	.dataout(count_a1_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a1_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a1_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N17
+dffeas count_a1_a_areg0(
+	.clk(count_a1_a_areg0_CLK_driver),
+	.d(count_a1_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a1_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a1_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a1_a_areg0.is_wysiwyg = "true";
+defparam count_a1_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a2_a_a12_DATAA_routing_wire_inst (
+	.datain(count_direction_a0_combout),
+	.dataout(count_a2_a_a12_DATAA_driver));
+
+fiftyfivenm_routing_wire count_a2_a_a12_DATAB_routing_wire_inst (
+	.datain(count_a2_a_areg0_q),
+	.dataout(count_a2_a_a12_DATAB_driver));
+
+fiftyfivenm_routing_wire count_a2_a_a12_CIN_routing_wire_inst (
+	.datain(count_a1_a_a11),
+	.dataout(count_a2_a_a12_CIN_driver));
+
+// Location: LCCOMB_X58_Y53_N18
+fiftyfivenm_lcell_comb count_a2_a_a12(
+// Equation(s):
+// count_a2_a_a12_combout = ((count_direction_a0_combout $ (count_a2_a_areg0_q $ (count_a1_a_a11)))) # (GND)
+// count_a2_a_a13 = CARRY((count_direction_a0_combout & (count_a2_a_areg0_q & !count_a1_a_a11)) # (!count_direction_a0_combout & ((count_a2_a_areg0_q) # (!count_a1_a_a11))))
+
+	.dataa(count_a2_a_a12_DATAA_driver),
+	.datab(count_a2_a_a12_DATAB_driver),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(count_a2_a_a12_CIN_driver),
+	.combout(count_a2_a_a12_combout),
+	.cout(count_a2_a_a13));
+// synopsys translate_off
+defparam count_a2_a_a12.lut_mask = 16'h964D;
+defparam count_a2_a_a12.sum_lutc_input = "cin";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a2_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a2_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a2_a_areg0_D_routing_wire_inst (
+	.datain(count_a2_a_a12_combout),
+	.dataout(count_a2_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a2_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a2_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N19
+dffeas count_a2_a_areg0(
+	.clk(count_a2_a_areg0_CLK_driver),
+	.d(count_a2_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a2_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a2_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a2_a_areg0.is_wysiwyg = "true";
+defparam count_a2_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a3_a_a14_DATAA_routing_wire_inst (
+	.datain(count_direction_a0_combout),
+	.dataout(count_a3_a_a14_DATAA_driver));
+
+fiftyfivenm_routing_wire count_a3_a_a14_DATAB_routing_wire_inst (
+	.datain(count_a3_a_areg0_q),
+	.dataout(count_a3_a_a14_DATAB_driver));
+
+fiftyfivenm_routing_wire count_a3_a_a14_CIN_routing_wire_inst (
+	.datain(count_a2_a_a13),
+	.dataout(count_a3_a_a14_CIN_driver));
+
+// Location: LCCOMB_X58_Y53_N20
+fiftyfivenm_lcell_comb count_a3_a_a14(
+// Equation(s):
+// count_a3_a_a14_combout = (count_direction_a0_combout & ((count_a3_a_areg0_q & (!count_a2_a_a13)) # (!count_a3_a_areg0_q & ((count_a2_a_a13) # (GND))))) # (!count_direction_a0_combout & ((count_a3_a_areg0_q & (count_a2_a_a13 & VCC)) # (!count_a3_a_areg0_q 
+// & (!count_a2_a_a13))))
+// count_a3_a_a15 = CARRY((count_direction_a0_combout & ((!count_a2_a_a13) # (!count_a3_a_areg0_q))) # (!count_direction_a0_combout & (!count_a3_a_areg0_q & !count_a2_a_a13)))
+
+	.dataa(count_a3_a_a14_DATAA_driver),
+	.datab(count_a3_a_a14_DATAB_driver),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(count_a3_a_a14_CIN_driver),
+	.combout(count_a3_a_a14_combout),
+	.cout(count_a3_a_a15));
+// synopsys translate_off
+defparam count_a3_a_a14.lut_mask = 16'h692B;
+defparam count_a3_a_a14.sum_lutc_input = "cin";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a3_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a3_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a3_a_areg0_D_routing_wire_inst (
+	.datain(count_a3_a_a14_combout),
+	.dataout(count_a3_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a3_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a3_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N21
+dffeas count_a3_a_areg0(
+	.clk(count_a3_a_areg0_CLK_driver),
+	.d(count_a3_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a3_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a3_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a3_a_areg0.is_wysiwyg = "true";
+defparam count_a3_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a4_a_a16_DATAA_routing_wire_inst (
+	.datain(count_direction_a0_combout),
+	.dataout(count_a4_a_a16_DATAA_driver));
+
+fiftyfivenm_routing_wire count_a4_a_a16_DATAB_routing_wire_inst (
+	.datain(count_a4_a_areg0_q),
+	.dataout(count_a4_a_a16_DATAB_driver));
+
+fiftyfivenm_routing_wire count_a4_a_a16_CIN_routing_wire_inst (
+	.datain(count_a3_a_a15),
+	.dataout(count_a4_a_a16_CIN_driver));
+
+// Location: LCCOMB_X58_Y53_N22
+fiftyfivenm_lcell_comb count_a4_a_a16(
+// Equation(s):
+// count_a4_a_a16_combout = ((count_direction_a0_combout $ (count_a4_a_areg0_q $ (count_a3_a_a15)))) # (GND)
+// count_a4_a_a17 = CARRY((count_direction_a0_combout & (count_a4_a_areg0_q & !count_a3_a_a15)) # (!count_direction_a0_combout & ((count_a4_a_areg0_q) # (!count_a3_a_a15))))
+
+	.dataa(count_a4_a_a16_DATAA_driver),
+	.datab(count_a4_a_a16_DATAB_driver),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(count_a4_a_a16_CIN_driver),
+	.combout(count_a4_a_a16_combout),
+	.cout(count_a4_a_a17));
+// synopsys translate_off
+defparam count_a4_a_a16.lut_mask = 16'h964D;
+defparam count_a4_a_a16.sum_lutc_input = "cin";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a4_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a4_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a4_a_areg0_D_routing_wire_inst (
+	.datain(count_a4_a_a16_combout),
+	.dataout(count_a4_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a4_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a4_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N23
+dffeas count_a4_a_areg0(
+	.clk(count_a4_a_areg0_CLK_driver),
+	.d(count_a4_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a4_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a4_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a4_a_areg0.is_wysiwyg = "true";
+defparam count_a4_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a5_a_a18_DATAA_routing_wire_inst (
+	.datain(count_direction_a0_combout),
+	.dataout(count_a5_a_a18_DATAA_driver));
+
+fiftyfivenm_routing_wire count_a5_a_a18_DATAB_routing_wire_inst (
+	.datain(count_a5_a_areg0_q),
+	.dataout(count_a5_a_a18_DATAB_driver));
+
+fiftyfivenm_routing_wire count_a5_a_a18_CIN_routing_wire_inst (
+	.datain(count_a4_a_a17),
+	.dataout(count_a5_a_a18_CIN_driver));
+
+// Location: LCCOMB_X58_Y53_N24
+fiftyfivenm_lcell_comb count_a5_a_a18(
+// Equation(s):
+// count_a5_a_a18_combout = (count_direction_a0_combout & ((count_a5_a_areg0_q & (!count_a4_a_a17)) # (!count_a5_a_areg0_q & ((count_a4_a_a17) # (GND))))) # (!count_direction_a0_combout & ((count_a5_a_areg0_q & (count_a4_a_a17 & VCC)) # (!count_a5_a_areg0_q 
+// & (!count_a4_a_a17))))
+// count_a5_a_a19 = CARRY((count_direction_a0_combout & ((!count_a4_a_a17) # (!count_a5_a_areg0_q))) # (!count_direction_a0_combout & (!count_a5_a_areg0_q & !count_a4_a_a17)))
+
+	.dataa(count_a5_a_a18_DATAA_driver),
+	.datab(count_a5_a_a18_DATAB_driver),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(count_a5_a_a18_CIN_driver),
+	.combout(count_a5_a_a18_combout),
+	.cout(count_a5_a_a19));
+// synopsys translate_off
+defparam count_a5_a_a18.lut_mask = 16'h692B;
+defparam count_a5_a_a18.sum_lutc_input = "cin";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a5_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a5_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a5_a_areg0_D_routing_wire_inst (
+	.datain(count_a5_a_a18_combout),
+	.dataout(count_a5_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a5_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a5_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N25
+dffeas count_a5_a_areg0(
+	.clk(count_a5_a_areg0_CLK_driver),
+	.d(count_a5_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a5_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a5_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a5_a_areg0.is_wysiwyg = "true";
+defparam count_a5_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a6_a_a20_DATAA_routing_wire_inst (
+	.datain(count_direction_a0_combout),
+	.dataout(count_a6_a_a20_DATAA_driver));
+
+fiftyfivenm_routing_wire count_a6_a_a20_DATAB_routing_wire_inst (
+	.datain(count_a6_a_areg0_q),
+	.dataout(count_a6_a_a20_DATAB_driver));
+
+fiftyfivenm_routing_wire count_a6_a_a20_CIN_routing_wire_inst (
+	.datain(count_a5_a_a19),
+	.dataout(count_a6_a_a20_CIN_driver));
+
+// Location: LCCOMB_X58_Y53_N26
+fiftyfivenm_lcell_comb count_a6_a_a20(
+// Equation(s):
+// count_a6_a_a20_combout = ((count_direction_a0_combout $ (count_a6_a_areg0_q $ (count_a5_a_a19)))) # (GND)
+// count_a6_a_a21 = CARRY((count_direction_a0_combout & (count_a6_a_areg0_q & !count_a5_a_a19)) # (!count_direction_a0_combout & ((count_a6_a_areg0_q) # (!count_a5_a_a19))))
+
+	.dataa(count_a6_a_a20_DATAA_driver),
+	.datab(count_a6_a_a20_DATAB_driver),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(count_a6_a_a20_CIN_driver),
+	.combout(count_a6_a_a20_combout),
+	.cout(count_a6_a_a21));
+// synopsys translate_off
+defparam count_a6_a_a20.lut_mask = 16'h964D;
+defparam count_a6_a_a20.sum_lutc_input = "cin";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a6_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a6_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a6_a_areg0_D_routing_wire_inst (
+	.datain(count_a6_a_a20_combout),
+	.dataout(count_a6_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a6_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a6_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N27
+dffeas count_a6_a_areg0(
+	.clk(count_a6_a_areg0_CLK_driver),
+	.d(count_a6_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a6_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a6_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a6_a_areg0.is_wysiwyg = "true";
+defparam count_a6_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a7_a_a22_DATAA_routing_wire_inst (
+	.datain(count_direction_a0_combout),
+	.dataout(count_a7_a_a22_DATAA_driver));
+
+fiftyfivenm_routing_wire count_a7_a_a22_DATAD_routing_wire_inst (
+	.datain(count_a7_a_areg0_q),
+	.dataout(count_a7_a_a22_DATAD_driver));
+
+fiftyfivenm_routing_wire count_a7_a_a22_CIN_routing_wire_inst (
+	.datain(count_a6_a_a21),
+	.dataout(count_a7_a_a22_CIN_driver));
+
+// Location: LCCOMB_X58_Y53_N28
+fiftyfivenm_lcell_comb count_a7_a_a22(
+// Equation(s):
+// count_a7_a_a22_combout = count_direction_a0_combout $ (count_a6_a_a21 $ (!count_a7_a_areg0_q))
+
+	.dataa(count_a7_a_a22_DATAA_driver),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(count_a7_a_a22_DATAD_driver),
+	.cin(count_a7_a_a22_CIN_driver),
+	.combout(count_a7_a_a22_combout),
+	.cout());
+// synopsys translate_off
+defparam count_a7_a_a22.lut_mask = 16'h5AA5;
+defparam count_a7_a_a22.sum_lutc_input = "cin";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire count_a7_a_areg0_CLK_routing_wire_inst (
+	.datain(clk_ainputclkctrl_outclk),
+	.dataout(count_a7_a_areg0_CLK_driver));
+
+fiftyfivenm_routing_wire count_a7_a_areg0_D_routing_wire_inst (
+	.datain(count_a7_a_a22_combout),
+	.dataout(count_a7_a_areg0_D_driver));
+
+fiftyfivenm_routing_wire count_a7_a_areg0_ENA_routing_wire_inst (
+	.datain(count_enable_a0_combout),
+	.dataout(count_a7_a_areg0_ENA_driver));
+
+// Location: FF_X58_Y53_N29
+dffeas count_a7_a_areg0(
+	.clk(count_a7_a_areg0_CLK_driver),
+	.d(count_a7_a_areg0_D_driver),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(count_a7_a_areg0_ENA_driver),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(count_a7_a_areg0_q),
+	.prn(vcc));
+// synopsys translate_off
+defparam count_a7_a_areg0.is_wysiwyg = "true";
+defparam count_a7_a_areg0.power_up = "low";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_UNVM_a_NOSC_ENA_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_UNVM_a_NOSC_ENA_driver));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_UNVM_a_XE_YE_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_UNVM_a_XE_YE_driver));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_UNVM_a_SE_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_UNVM_a_SE_driver));
+
+// Location: UNVM_X0_Y40_N40
+fiftyfivenm_unvm a_aQUARTUS_CREATED_UNVM_a(
+	.arclk(vcc),
+	.arshft(vcc),
+	.drclk(vcc),
+	.drshft(vcc),
+	.drdin(vcc),
+	.nprogram(vcc),
+	.nerase(vcc),
+	.nosc_ena(a_aQUARTUS_CREATED_UNVM_a_NOSC_ENA_driver),
+	.par_en(vcc),
+	.xe_ye(a_aQUARTUS_CREATED_UNVM_a_XE_YE_driver),
+	.se(a_aQUARTUS_CREATED_UNVM_a_SE_driver),
+	.ardin(23'b11111111111111111111111),
+	.busy(a_aQUARTUS_CREATED_UNVM_a_abusy),
+	.osc(),
+	.bgpbusy(),
+	.sp_pass(),
+	.se_pass(),
+	.drdout());
+// synopsys translate_off
+defparam a_aQUARTUS_CREATED_UNVM_a.addr_range1_end_addr = -1;
+defparam a_aQUARTUS_CREATED_UNVM_a.addr_range1_offset = -1;
+defparam a_aQUARTUS_CREATED_UNVM_a.addr_range2_offset = -1;
+defparam a_aQUARTUS_CREATED_UNVM_a.is_compressed_image = "false";
+defparam a_aQUARTUS_CREATED_UNVM_a.is_dual_boot = "false";
+defparam a_aQUARTUS_CREATED_UNVM_a.is_eram_skip = "false";
+defparam a_aQUARTUS_CREATED_UNVM_a.max_ufm_valid_addr = -1;
+defparam a_aQUARTUS_CREATED_UNVM_a.max_valid_addr = -1;
+defparam a_aQUARTUS_CREATED_UNVM_a.min_ufm_valid_addr = -1;
+defparam a_aQUARTUS_CREATED_UNVM_a.min_valid_addr = -1;
+defparam a_aQUARTUS_CREATED_UNVM_a.part_name = "quartus_created_unvm";
+defparam a_aQUARTUS_CREATED_UNVM_a.reserve_block = "true";
+// synopsys translate_on
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC1_a_SOC_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC1_a_SOC_driver));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC1_a_TSEN_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC1_a_TSEN_driver));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC1_a_CHSEL_a0_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC1_a_CHSEL_bus[0]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC1_a_CHSEL_a1_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC1_a_CHSEL_bus[1]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC1_a_CHSEL_a2_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC1_a_CHSEL_bus[2]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC1_a_CHSEL_a3_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC1_a_CHSEL_bus[3]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC1_a_CHSEL_a4_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC1_a_CHSEL_bus[4]));
+
+// Location: ADCBLOCK_X43_Y52_N0
+fiftyfivenm_adcblock a_aQUARTUS_CREATED_ADC1_a(
+	.soc(a_aQUARTUS_CREATED_ADC1_a_SOC_driver),
+	.usr_pwd(vcc),
+	.tsen(a_aQUARTUS_CREATED_ADC1_a_TSEN_driver),
+	.clkin_from_pll_c0(gnd),
+	.chsel(a_aQUARTUS_CREATED_ADC1_a_CHSEL_bus),
+	.eoc(a_aQUARTUS_CREATED_ADC1_a_aeoc),
+	.dout());
+// synopsys translate_off
+defparam a_aQUARTUS_CREATED_ADC1_a.analog_input_pin_mask = 0;
+defparam a_aQUARTUS_CREATED_ADC1_a.clkdiv = 1;
+defparam a_aQUARTUS_CREATED_ADC1_a.device_partname_fivechar_prefix = "none";
+defparam a_aQUARTUS_CREATED_ADC1_a.is_this_first_or_second_adc = 1;
+defparam a_aQUARTUS_CREATED_ADC1_a.prescalar = 0;
+defparam a_aQUARTUS_CREATED_ADC1_a.pwd = 1;
+defparam a_aQUARTUS_CREATED_ADC1_a.refsel = 0;
+defparam a_aQUARTUS_CREATED_ADC1_a.reserve_block = "true";
+defparam a_aQUARTUS_CREATED_ADC1_a.testbits = 66;
+defparam a_aQUARTUS_CREATED_ADC1_a.tsclkdiv = 1;
+defparam a_aQUARTUS_CREATED_ADC1_a.tsclksel = 0;
+// synopsys translate_on
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC2_a_SOC_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC2_a_SOC_driver));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC2_a_TSEN_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC2_a_TSEN_driver));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC2_a_CHSEL_a0_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC2_a_CHSEL_bus[0]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC2_a_CHSEL_a1_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC2_a_CHSEL_bus[1]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC2_a_CHSEL_a2_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC2_a_CHSEL_bus[2]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC2_a_CHSEL_a3_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC2_a_CHSEL_bus[3]));
+
+fiftyfivenm_routing_wire a_aQUARTUS_CREATED_ADC2_a_CHSEL_a4_a_routing_wire_inst (
+	.datain(a_aQUARTUS_CREATED_GND_aI_combout),
+	.dataout(a_aQUARTUS_CREATED_ADC2_a_CHSEL_bus[4]));
+
+// Location: ADCBLOCK_X43_Y51_N0
+fiftyfivenm_adcblock a_aQUARTUS_CREATED_ADC2_a(
+	.soc(a_aQUARTUS_CREATED_ADC2_a_SOC_driver),
+	.usr_pwd(vcc),
+	.tsen(a_aQUARTUS_CREATED_ADC2_a_TSEN_driver),
+	.clkin_from_pll_c0(gnd),
+	.chsel(a_aQUARTUS_CREATED_ADC2_a_CHSEL_bus),
+	.eoc(a_aQUARTUS_CREATED_ADC2_a_aeoc),
+	.dout());
+// synopsys translate_off
+defparam a_aQUARTUS_CREATED_ADC2_a.analog_input_pin_mask = 0;
+defparam a_aQUARTUS_CREATED_ADC2_a.clkdiv = 1;
+defparam a_aQUARTUS_CREATED_ADC2_a.device_partname_fivechar_prefix = "none";
+defparam a_aQUARTUS_CREATED_ADC2_a.is_this_first_or_second_adc = 2;
+defparam a_aQUARTUS_CREATED_ADC2_a.prescalar = 0;
+defparam a_aQUARTUS_CREATED_ADC2_a.pwd = 1;
+defparam a_aQUARTUS_CREATED_ADC2_a.refsel = 0;
+defparam a_aQUARTUS_CREATED_ADC2_a.reserve_block = "true";
+defparam a_aQUARTUS_CREATED_ADC2_a.testbits = 66;
+defparam a_aQUARTUS_CREATED_ADC2_a.tsclkdiv = 1;
+defparam a_aQUARTUS_CREATED_ADC2_a.tsclksel = 0;
+// synopsys translate_on
+
+assign count[0] = count_a0_a_aoutput_o;
+
+assign count[1] = count_a1_a_aoutput_o;
+
+assign count[2] = count_a2_a_aoutput_o;
+
+assign count[3] = count_a3_a_aoutput_o;
+
+assign count[4] = count_a4_a_aoutput_o;
+
+assign count[5] = count_a5_a_aoutput_o;
+
+assign count[6] = count_a6_a_aoutput_o;
+
+assign count[7] = count_a7_a_aoutput_o;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_TMS~	=>  Location: PIN_H2,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_TCK~	=>  Location: PIN_G2,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_TDI~	=>  Location: PIN_L4,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_TDO~	=>  Location: PIN_M5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_CONFIG_SEL~	=>  Location: PIN_H10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCONFIG~	=>  Location: PIN_H9,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_nSTATUS~	=>  Location: PIN_G9,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+// ~ALTERA_CONF_DONE~	=>  Location: PIN_F8,	 I/O Standard: 2.5 V Schmitt Trigger,	 Current Strength: Default
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire a_aALTERA_TMS_a_apadout;
+wire a_aALTERA_TCK_a_apadout;
+wire a_aALTERA_TDI_a_apadout;
+wire a_aALTERA_CONFIG_SEL_a_apadout;
+wire a_aALTERA_nCONFIG_a_apadout;
+wire a_aALTERA_nSTATUS_a_apadout;
+wire a_aALTERA_CONF_DONE_a_apadout;
+wire a_aALTERA_TMS_a_aibuf_o;
+wire a_aALTERA_TCK_a_aibuf_o;
+wire a_aALTERA_TDI_a_aibuf_o;
+wire a_aALTERA_CONFIG_SEL_a_aibuf_o;
+wire a_aALTERA_nCONFIG_a_aibuf_o;
+wire a_aALTERA_nSTATUS_a_aibuf_o;
+wire a_aALTERA_CONF_DONE_a_aibuf_o;
+
+wire a_aALTERA_TMS_a_aibuf_I_driver;
+wire a_aALTERA_TCK_a_aibuf_I_driver;
+wire a_aALTERA_TDI_a_aibuf_I_driver;
+wire a_aALTERA_CONFIG_SEL_a_aibuf_I_driver;
+wire a_aALTERA_nCONFIG_a_aibuf_I_driver;
+wire a_aALTERA_nSTATUS_a_aibuf_I_driver;
+wire a_aALTERA_CONF_DONE_a_aibuf_I_driver;
+
+endmodule
